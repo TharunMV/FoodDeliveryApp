@@ -27,19 +27,19 @@ public class MenuItemController {
         return menuItemService.getMenuItem(itemName);
     }
 
-    @PostMapping(BASE_MENU_ITEM_URI)
-    public void addMenuItem(@RequestBody MenuItem menuItem, @PathVariable String menuType) {
-        menuItem.setMenu(new Menu(0L, menuType, ""));
+    @PostMapping(POST_MENU_ITEM_URI)
+    public void addMenuItem(@RequestBody MenuItem menuItem, @PathVariable Long menuId) {
+        menuItem.setMenu(new Menu(menuId, "", ""));
         menuItemService.addOrUpdateMenuItem(menuItem);
     }
 
-    @PutMapping(UPDATE_AND_DELETE_MENU_ITEM_URI)
-    public void updateMenuItem(@RequestBody MenuItem menuItem, @PathVariable String menuType) {
-        menuItem.setMenu(new Menu(0L, menuType, ""));
+    @PutMapping(UPDATE_MENU_ITEM_URI)
+    public void updateMenuItem(@RequestBody MenuItem menuItem, @PathVariable Long menuId) {
+        menuItem.setMenu(new Menu(menuId, "", ""));
         menuItemService.addOrUpdateMenuItem(menuItem);
     }
 
-    @DeleteMapping(UPDATE_AND_DELETE_MENU_ITEM_URI)
+    @DeleteMapping(DELETE_MENU_ITEM_URI)
     public void deleteMenuItem(@PathVariable Long itemId) {
         menuItemService.deleteMenuItem(itemId);
     }

@@ -16,7 +16,11 @@ public class Constants {
 
     public static final String GET_MENU_ITEM_BY_NAME_URI = "/restaurants/{restaurantId}/menus/{menuId}/menuItems/{itemName}";
 
-    public static final String UPDATE_AND_DELETE_MENU_ITEM_URI = "/restaurants/{restaurantId}/menus/{menuType}/menuItems/{itemId}";
+    public static final String POST_MENU_ITEM_URI = "/restaurants/{restaurantId}/menus/{menuId}/menuItems";
+
+    public static final String UPDATE_MENU_ITEM_URI = "/restaurants/{restaurantId}/menus/{menuId}/menuItems/{itemId}";
+
+    public static final String DELETE_MENU_ITEM_URI = "/restaurants/{restaurantId}/menus/{menuType}/menuItems/{itemId}";
 
     public static final String BASE_CUSTOMER_URI = "/customers";
 
